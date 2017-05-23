@@ -13,9 +13,16 @@
 	<!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+	<!-- Searchbox CSS -->
+	<link href="cobasearch.css" rel="stylesheet">
+	
     <!-- Theme CSS -->
     <link href="css/clean-blog.css" rel="stylesheet">
     <link href="css/w3.css" rel="stylesheet">
+    <link href="css/rating.css" rel="stylesheet">
+    <link href="css/rateme.css" rel="stylesheet">
+    <link href="css/cobacoba.css" rel="stylesheet">
+    <link href="css/testimonial.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,6 +49,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                  <li>
+
+
+                  </li>
                     <li>
                         <a class="dropdown-toggle" data-toggle="dropdown">
 							            <img src="img/user/Shinta Ratnasari/avatar/1.jpg" style="width:25px;height:25px" class="w3-circle w3-hover-opacity">
@@ -56,7 +67,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                             <a href="index.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                           </li>
 						            </ul>
-                    </li>
+                   </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -65,23 +76,71 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </nav>
 
 <!-- Page Container -->
-<header>
-    <div class="container" id="maincontent" tabindex="-1">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="img/client/Melati Aulia Putri.jpg" style="width:400px;height:400px" class="w3-circle">
-                <div class="intro-text">
-                    <h1 class="name">Melati Aulia Putri</h1>
-                    <hr class="star-light">
-                    <h3>Hello! My name is Mella</h3>
-					<a href="add_client.html">
-                    <input type="button" class="btn-add btn-add-outline" value="Add me to your Client">
-					</a>
-                </div>
-            </div>
+<div class="w3-content w3-main" style="max-width:1250px;margin-top:80px">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+      <div class="w3-white w3-text-grey w3-card-4">
+        <!-- Ini Kolom Avatar -->
+        <div class="w3-display-container">
+          <img src="img/user/Shinta Ratnasari/avatar/1.jpg" style="width:100%" alt="Avatar">
         </div>
+        <br>
+        <!-- Ini Tombol Upload Gambar Profil -->
+        <div class="w3-container">
+           <div class="form-bottom text-left">
+                <button type="button" id="buttoneditphoto" class="btn btn-info text w3-teal" data-toggle="collapse" data-target="#editphotoprofile">Change Profile Photo</button>
+                <br>
+                <div id="editphotoprofile" class="collapse">
+                    <p>
+					   <form > <input type="file" name="pic" accept="image/*"> </form>
+					</p>
+					<button type="submit" class="btn w3-teal" align="right">Confirm</button>
+				</div>
+				<br>
+		   </div>
+		</div>
+      </div>
+
+    <!-- End Left Column -->
     </div>
-</header>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Edit My Info</h2>
+			<form method="post" class="login-form">
+				<label><b>First Name</b></label><br>
+				<input class="form-control" type="text" name="firstname" value="Shinta"><br>
+				<label><b>Last Name</b></label><br>
+				<input class="form-control" type="text" name="lastname" value="Ratnasari"><br>
+				<label><b>Old Password</b></label><br>
+				<input class="form-control" type="text" name="oldpass" placeholder="Input Password..."><br>
+				<label><b>New Password</b></label><br>
+				<input class="form-control" type="text" name="newpass" placeholder="Input Password..."><br>
+				<label><b>Retype New Password</b></label><br>
+				<input class="form-control" type="text" name="retypenewpass" placeholder="Input Password..."><br>
+				<label><b>Email</b></label><br>
+				<input class="form-control" type="text" name="email" value="shinta.ratnasari@mail.com"><br>
+				<label><b>Phone Number</b></label><br>
+				<input class="form-control" type="text" name="phonenum" value="+62816000000"><br>
+				<label><b>Location</b></label><br>
+				<input class="form-control" type="text" name="location" value="Serang, Banten"><br>
+				<label><b>About Me</b></label><br>
+				<textarea class="form-control" type="description" name="aboutme"> </textarea><br>
+				<button type="submit" class="btn w3-teal w3-right">Confirm</button><br><br>
+			</form>
+	  </div>
+  		
+    <!-- End Right Column -->
+    </div>
+  <!-- End Grid -->
+  </div>
+<!-- End Page Container -->
+</div>
 
 <!-- Footer -->
 <footer class="text-center" style="max-width:100%">
@@ -118,7 +177,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             </ul>
         </div>
         </div>
-    </div>
 </footer>
 
 	<!-- jQuery -->
@@ -133,6 +191,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+
 
 </body>
 </html>
