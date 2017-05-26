@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyHomeDecor-Admin</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/theme/w3.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/flat-admin.css">
+</head>
+
+<body>
+  <div class="app app-default">
+
+<!--Buat Sidebar-->
+    <aside class="app-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="sidebar-brand" href="index.php"><span class="highlight">MyHomeDecor</span>Admin</a>
+        <button type="button" class="sidebar-toggle">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      <div class="sidebar-menu">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="../index.html">
+              <div class="icon">
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+              </div>
+              <div class="title">Dashboard</div>
+            </a>
+          </li>
+          <li class="active">
+            <a href="../uikits/designer.html">
+              <div class="icon">
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>
+              </div>
+              <div class="title">Designers</div>
+            </a>
+          </li>
+          <li>
+            <a href="./client.html">
+              <div class="icon">
+                <i class="fa fa-suitcase" aria-hidden="true"></i>
+              </div>
+              <div class="title">Client</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <ul class="menu">
+          <li>
+            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-cogs" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+<!--Buat Navbar-->
+<script type="text/ng-template" id="sidebar-dropdown.tpl.html">
+  <div class="dropdown-background">
+    <div class="bg"></div>
+  </div>
+  <div class="dropdown-container">
+    {{list}}
+  </div>
+</script>
+<div class="app-container">
+  <nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse in">
+      <ul class="nav navbar-nav navbar-mobile">
+        <li>
+          <button type="button" class="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+          </button>
+        </li>
+        <li class="logo">
+          <a class="navbar-brand" href="#"><span class="highlight">MyHomeDecor</span> Admin</a>
+        </li>
+        <li>
+          <button type="button" class="navbar-toggle">
+            <img class="profile-img" src="./assets/images/Fadhlan.jpg">
+          </button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="navbar-title">Dashboard</li>
+        <li class="navbar-search hidden-sm">
+          <input id="search" type="text" placeholder="Search..">
+          <button class="btn-search"><i class="fa fa-search"></i></button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown notification">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div class="title">Add Client Request</div>
+            <div class="count">0</div>
+          </a>
+          <div class="dropdown-menu">
+            <ul>
+              <li class="dropdown-header">Add Client Request</li>
+              <li class="dropdown-empty">No New Request</li>
+              <li class="dropdown-footer">
+                <a href="#">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="dropdown notification danger">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <div class="icon"><i class="fa fa-bell" aria-hidden="true"></i></div>
+            <div class="title">System Notifications</div>
+            <div class="count">10</div>
+          </a>
+          <div class="dropdown-menu">
+            <ul>
+              <li class="dropdown-header">Notification</li>
+              <li>
+                <a href="#">
+                  <span class="badge badge-danger pull-right">8</span>
+                  <div class="message">
+                    <div class="content">
+                      <div class="title">New Order</div>
+                      <div class="description">$400 total</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge badge-danger pull-right">14</span>
+                  Inbox
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge badge-danger pull-right">5</span>
+                  Issues Report
+                </a>
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="dropdown profile">
+          <a href="/html/pages/profile.html" class="dropdown-toggle"  data-toggle="dropdown">
+            <img class="profile-img" src="../assets/images/Fadhlan.jpg">
+            <div class="title">Profile</div>
+          </a>
+          <div class="dropdown-menu">
+            <div class="profile-info">
+              <h4 class="username">Fadhlan P</h4>
+            </div>
+            <ul class="action">
+              <li>
+                <a href="#">
+                  Profile
+                </a>
+              </li>
+              <li>
+                <a href="login.php">
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Buat Profile Portofolio-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body app-heading">
+          <img class="profile-img" src="../assets/images/Danang WN.jpg">
+          <div class="app-title">
+            <div class="title"><span class="highlight">Wahyu Nugraha</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card card-tab">
+        <div class="card-header">
+          <ul class="nav nav-tabs">
+            <li role="tab1" class="active">
+              <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Client</a>
+            </li>
+            <li role="tab3">
+              <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Portofolio</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-body no-padding tab-content">
+<!--Isi Profile-->
+          <div role="tabpanel" class="tab-pane active" id="tab1">
+            <div class="row">
+              <div class="col-md-3 col-sm-12">
+                <div class="col-md-7">
+                  <div class="card card-mini">
+                    <div class="card-body app-heading">
+                      <img class="profile-img" src="../assets/images/Danang WN.jpg">
+                      Melati APW
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="card card-mini">
+                    <div class="card-body app-heading">
+                      <img class="profile-img" src="../assets/images/Danang WN.jpg">
+                      Melati APW
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Isi Portofolio-->
+          <div role="tabpanel" class="tab-pane" id="tab3">
+            <!-- Buat Portofolio-->
+            <!-- Portfolio Grid Section -->
+            <section id="portfolio">
+                <div class="w3-container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/1.jpg" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Apartemen Nona Melati</h4>
+                                <p class="text-muted">Client : <a href="/UI RPL/myhomedecor bootstrap/profil_client.html">Melati Aulia Putri</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Startup Framework</h4>
+                                <p class="text-muted">Website Design</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Treehouse</h4>
+                                <p class="text-muted">Website Design</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Golden</h4>
+                                <p class="text-muted">Website Design</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Escape</h4>
+                                <p class="text-muted">Website Design</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-8 portfolio-item">
+                            <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Dreams</h4>
+                                <p class="text-muted">Website Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Modals -->
+            <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+            <!-- Portfolio Modal 1 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h2>Apartemen Nona Melati</h2>
+                                        <p class="item-intro text-muted">Client : Melati Aulia Putri</p>
+                                        <img class="img-responsive img-centered" src="img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/1.jpg" alt="">
+                                        <img class="img-responsive img-centered" src="img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/2.jpg" alt="">
+                                        <img class="img-responsive img-centered" src="img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/3.jpg" alt="">
+                                        <img class="img-responsive img-centered" src="img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/4.jpg" alt="">
+                                        <img class="img-responsive img-centered" src="img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/5.jpg" alt="">
+                                        <p> Proyek ini dikerjakan untuk mendekorasi apartemen baru Nona Melati.
+                                            Tema yang diinginkan adalah simplisitas, yang didominasi dengan warna putih, terlihat elegan namun tidak terlihat kosong.
+                                        </p>
+                                        <ul class="list-inline">
+                                            <li>Date: July 2014</li>
+                                            <li>
+                                              Category:
+                                              <a href="k_livingroom.html">Ruang Keluarga</a>,
+                                              <a href="k_kitchen.html">Dapur</a>,
+                                              <a href="k_diningroom.html">Ruang Makan</a>,
+                                              <a href="k_bathroom.html">Kamar Mandi</a>,
+                                            </li>
+                                        </ul>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Modal 2 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <h2>Project Heading</h2>
+                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
+                                        <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                                        <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Modal 3 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h2>Project Name</h2>
+                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
+                                        <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                                        <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Modal 4 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h2>Project Name</h2>
+                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
+                                        <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
+                                        <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Modal 5 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h2>Project Name</h2>
+                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
+                                        <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
+                                        <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Modal 6 -->
+            <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="close-modal" data-dismiss="modal">
+                            <div class="lr">
+                                <div class="rl">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <div class="modal-body">
+                                        <!-- Project Details Go Here -->
+                                        <h2>Project Name</h2>
+                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                        <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
+                                        <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                                        <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="w3-center w3-padding-32">
+              <div class="w3-bar">
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+              </div>
+            </div>
+            <hr>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.js"></script>
+  <script type="text/javascript" src="../assets/js/vendor.js"></script>
+  <script type="text/javascript" src="../assets/js/app.js"></script>
+</body>
+</html>
