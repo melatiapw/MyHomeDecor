@@ -148,36 +148,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		      <br>
           <br>
 		      <a href="#contact"><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal"></i>Contact</a>
-          <hr>
-          <p class="w3-large"><b><i class="fa fa-star fa-fw w3-margin-right w3-text-teal"></i>Rating</b></p>
-          <div class="stars">
-			      <form action="">
-      				<input class="star star-5" id="star-5" type="radio" name="star"/>
-      				<label class="star star-5" for="star-5"></label>
-      				<input class="star star-4" id="star-4" type="radio" name="star"/>
-      				<label class="star star-4" for="star-4"></label>
-      				<input class="star star-3" id="star-3" type="radio" name="star"/>
-      				<label class="star star-3" for="star-3"></label>
-      				<input class="star star-2" id="star-2" type="radio" name="star"/>
-      				<label class="star star-2" for="star-2"></label>
-      				<input class="star star-1" id="star-1" type="radio" name="star"/>
-      				<label class="star star-1" for="star-1"></label>
-			      </form>
-		      </div>
-  		    <br>
-          <br>
-          <br>
-          <div class="w3-row w3-center w3-padding-10 w3-section w3-light-grey">
-      			<div class="w3-center w3-section">
-      				<span class="w3-xlarge">55+</span><br>
-      				Projects Done
-      			</div>
-      			<div class="w3-center w3-section">
-      				<span class="w3-xlarge">89+</span><br>
-      				Clients
-      			</div>
-  		    </div>
-        </div>
+          
       </div>
       <br>
 
