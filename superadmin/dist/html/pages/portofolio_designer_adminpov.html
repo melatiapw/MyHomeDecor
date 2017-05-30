@@ -196,16 +196,16 @@
           <div class="card card-tab">
             <div class="card-header">
               <ul class="nav nav-tabs">
-                <li role="tab1" class="active">
+                <li role="tab1">
                   <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Client</a>
                 </li>
-                <li role="tab3">
+                <li role="tab3" class="active">
                   <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Portofolio</a>
                 </li>
               </ul>
             </div>
             <div class="card-body no-padding tab-content">
-              <div role="tabpanel" class="tab-pane active" id="tab1">
+              <div role="tabpanel" class="tab-pane" id="tab1">
                 <div class="row">
                   <!--Isi Client-->
 
@@ -227,42 +227,61 @@
 
                 </div>
               </div>
-              <div role="tabpanel" class="tab-pane" id="tab3">
+              <div role="tabpanel" class="tab-pane active" id="tab3">
 
                 <!--Isi Portofolio-->
-                    <section id="portfolio">
+                <!-- Page Container -->
+                <div class="w3-content w3-main" style="max-width:1250px;margin-top:80px;margin-left:100px;margin-right:100px;margin-bottom:80px">
 
-                        <div class="row">
-                          <div class="col-md-6 col-sm-8 portfolio-item">
-                            <a href="portofolio_designer_adminpov.html" class="portfolio-link">
-                              <div class="portfolio-hover"></div>
-                              <img src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/1.jpg" class="img-responsive" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                              <h4>Apartemen Nona Melati</h4>
-                              <p class="text-muted">Client : Melati Aulia Putri</p>
-                              <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Delete this portofolio</button>
+                  <!-- The Grid -->
+                  <div class="w3-row-padding">
+
+                    <!-- Right Column -->
+                    <div class="w3-col.m10">
+                      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                        <h2 class="w3-text-teal w3-padding-16 text-center">Apartemen Nona Melati</h2>
+                        <p class="w3-text-grey text-center"> Designer : <a href="profil_fix.html"> Shinta Ratnasari </a></p>
+
+                      <!-- Buat Portofolio-->
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="modal-body">
+                              <!-- Project Details Go Here -->
+                                <p> Proyek ini dikerjakan untuk mendekorasi apartemen baru Nona Melati.
+                                    Tema yang diinginkan adalah simplisitas, yang didominasi dengan warna putih, terlihat elegan namun tidak terlihat kosong.
+                                </p>
+                                <ul class="list-unstyled">
+                                  <li><b>Date</b>: July 2014</li>
+                                  <li>
+                                    <b>Category</b>:
+                                    <a href="k_livingroom.html">Ruang Keluarga</a>,
+                                    <a href="k_kitchen.html">Dapur</a>,
+                                    <a href="k_diningroom.html">Ruang Makan</a>,
+                                    <a href="k_bathroom.html">Kamar Mandi</a>,
+                                  </li>
+                                </ul>
+
+                                <img class="img-responsive img-centered" src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/1.jpg" alt="">
+                                <img class="img-responsive img-centered" src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/2.jpg" alt="">
+                                <img class="img-responsive img-centered" src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/3.jpg" alt="">
+                                <img class="img-responsive img-centered" src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/4.jpg" alt="">
+                                <img class="img-responsive img-centered" src="/UI RPL/myhomedecor bootstrap/img/user/Shinta Ratnasari/portofolio/Apartemen Nona Melati/5.jpg" alt="">
+
+                              </div>
                             </div>
                           </div>
-
-                        </div>
-                        <!-- Pagination -->
-                          <div class="w3-center w3-padding-32">
-                            <div class="w3-bar">
-                              <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                              <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                              <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                              <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                              <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                              <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-                            </div>
-                          </div>
-                        </section>
                       </div>
 
-
+                    <!-- End Right Column -->
+                    </div>
+                  <!-- End Grid -->
                   </div>
+                <!-- End Page Container -->
+                </div>
+
+
               </div>
+            </div>
 
             </div>
           </div>
